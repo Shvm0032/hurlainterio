@@ -8,7 +8,7 @@ import USPs from '../components/USPs';
 import PartnerBanner from '../components/PartnerBanner';
 
 export const metadata = {
-  title: 'Luxury Furniture Studio - Premium Custom Interior Design',
+  title: 'hurlainterio - Premium Custom Interior Design',
   description: 'Discover exquisite luxury furniture and custom interior design solutions. Premium collections, bespoke craftsmanship, and personalized design services.',
 };
 

@@ -1,9 +1,12 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Popup from "./Popup"
 import Link from 'next/link';
 import { ChevronDown, Menu, X, Home, Sofa, Palette, Briefcase, User, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,12 +21,12 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const collections = [
-    { name: 'Diamante Collection', href: '/collections/diamante' },
-    { name: 'Rubino Collection', href: '/collections/rubino' },
-    { name: 'Smeraldo Collection', href: '/collections/smeraldo' },
-    { name: 'Topazio Collection', href: '/collections/topazio' },
-  ];
+  // const collections = [
+  //   { name: 'Diamante Collection', href: '/collections/diamante' },
+  //   { name: 'Rubino Collection', href: '/collections/rubino' },
+  //   { name: 'Smeraldo Collection', href: '/collections/smeraldo' },
+  //   { name: 'Topazio Collection', href: '/collections/topazio' },
+  // ];
 
   const styles = [
     { name: 'Modern Contemporary', href: '/styles/modern-contemporary' },
@@ -34,12 +37,12 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Home', href: '/', icon: Home },
-    { 
-      name: 'Collections', 
-      href: '/collections', 
-      icon: Sofa,
-      dropdown: collections 
-    },
+    // { 
+    //   name: 'Collections', 
+    //   href: '/collections', 
+    //   icon: Sofa,
+    //   dropdown: collections 
+    // },
     { 
       name: 'Styles', 
       href: '/styles', 
@@ -53,8 +56,9 @@ const Navbar = () => {
   ];
 
   return (
+    <>
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+      isScrolled ? 'bg-[#18191b] backdrop-blur-md shadow-lg' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -62,9 +66,9 @@ const Navbar = () => {
           <Link href="/" className="flex items-center">
             <motion.div 
               whileHover={{ scale: 1.05 }}
-              className="text-2xl font-bold text-gray-900"
+              className="text-2xl font-bold text-white"
             >
-              <span className="text-amber-600">Luxury</span>Studio
+              <span className="text-amber-600">HURLA</span> INTERIO
             </motion.div>
           </Link>
 
@@ -75,7 +79,7 @@ const Navbar = () => {
                 <Link
                   href={item.href}
                   className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                    isScrolled ? 'text-gray-900 hover:text-amber-600' : 'text-white hover:text-amber-300'
+                    isScrolled ? 'text-white hover:text-amber-600' : 'text-white hover:text-amber-300'
                   }`}
                   onMouseEnter={() => item.dropdown && setActiveDropdown(item.name)}
                   onMouseLeave={() => setActiveDropdown(null)}
@@ -191,6 +195,10 @@ const Navbar = () => {
         )}
       </AnimatePresence>
     </nav>
+
+    <Popup></Popup>
+    </>
+    
   );
 };
 

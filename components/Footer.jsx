@@ -54,7 +54,17 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-[#111111] text-white">
+      <motion.button
+  onClick={scrollToTop}
+  whileHover={{ scale: 1.1 }}
+  whileTap={{ scale: 0.9 }}
+  className="fixed bottom-4 right-4 bg-amber-600 p-2 rounded-full z-[10000] hover:bg-amber-600 transition-colors duration-200"
+  aria-label="Scroll to top"
+>
+  <ArrowUp className="w-5 h-5 text-white" />
+</motion.button>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
@@ -68,7 +78,7 @@ const Footer = () => {
           >
             <Link href="/" className="flex items-center mb-6">
               <div className="text-2xl font-bold">
-                <span className="text-amber-400">Luxury</span>Studio
+                <span className="text-amber-400">HURLA</span> INTERIO
               </div>
             </Link>
             <p className="text-gray-300 mb-6 leading-relaxed">
@@ -88,7 +98,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-amber-400 flex-shrink-0" />
-                <span className="text-gray-300">info@luxurystudio.com</span>
+                <span className="text-gray-300">info@hurlainterio.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Clock className="w-5 h-5 text-amber-400 flex-shrink-0" />
@@ -165,7 +175,7 @@ const Footer = () => {
         </div>
 
         {/* Newsletter Signup */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -192,10 +202,10 @@ const Footer = () => {
               </motion.button>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Social Links & Bottom Bar */}
-        <div className="border-t border-gray-800 pt-8">
+        <div className="border-t  border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -235,15 +245,7 @@ const Footer = () => {
                 ))}
               </div>
               
-              <motion.button
-                onClick={scrollToTop}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className="bg-gray-800 p-2 rounded-full hover:bg-amber-600 transition-colors duration-200"
-                aria-label="Scroll to top"
-              >
-                <ArrowUp className="w-5 h-5" />
-              </motion.button>
+              
             </motion.div>
           </div>
 
@@ -252,9 +254,9 @@ const Footer = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.7 }}
             viewport={{ once: true }}
-            className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400"
+            className="mt-4 pt-4  border-t border-gray-800 text-center text-gray-400"
           >
-            <p>&copy; 2024 Luxury Studio. All rights reserved. Crafted with excellence.</p>
+            <p>&copy; 2024 HURLA INTERIO. All rights reserved. Crafted with excellence.</p>
           </motion.div>
         </div>
       </div>
