@@ -8,7 +8,6 @@ import image2 from "../Public/Assets/popup/hafele-design-studio-2.jpg";
 const Popup = () => {
   const [showPopup, setShowPopup] = useState(false);
 
-  // Step 1: Preload images when component mounts
   useEffect(() => {
     const preloadImages = [image1.src, image2.src];
     preloadImages.forEach((src) => {
@@ -17,11 +16,10 @@ const Popup = () => {
     });
   }, []);
 
-  // Step 2: Delay popup show
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowPopup(true);
-    }, 3000); // 3 sec delay
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -59,15 +57,14 @@ const Popup = () => {
 
   return (
     <>
-      {/* Hidden preload img tags (for safety) */}
       <div className="hidden">
         <img src={image1.src} alt="preload1" />
         <img src={image2.src} alt="preload2" />
       </div>
 
-      <div className="fixed z-[1000] flex items-center justify-center top-0 left-0 h-[100vh] w-full bg-[#00000075] animate-fade-in">
-        <div className="md:w-[70%] h-[62vh] sm:w-[90%] relative rounded-md overflow-hidden transition-opacity duration-500 ease-in-out">
-
+      <div className="fixed z-[1000] flex items-center justify-center top-0 left-0 h-screen w-full bg-[#00000075] animate-fade-in px-2">
+        <div className="w-[90%] md:w-[70%] h-[400px] sm:h-[450px] md:h-[500px] relative rounded-md overflow-hidden transition-opacity duration-500 ease-in-out bg-black">
+          
           {/* ❌ Close Button */}
           <button
             onClick={handleClose}
@@ -78,20 +75,21 @@ const Popup = () => {
 
           <Slider {...settings}>
             {slides.map((slide, index) => (
-              <div key={index} className="relative h-[400px] md:h-[500px]">
+              <div key={index} className="relative h-[400px] sm:h-[450px] md:h-[500px]">
                 <Image
                   src={slide.image}
                   alt={`Slide ${index}`}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-lg"
-                  priority={true}
+                  fill
+                  className="object-cover rounded-lg"
+                  priority
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-white">
-                  <h2 className="text-2xl md:text-5xl  font-bold mb-4">{slide.title}</h2>
+                <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-white text-center px-4">
+                  <h2 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4">
+                    {slide.title}
+                  </h2>
                   <a
                     href={slide.link}
-                    className="bg-white text-black px-5 py-2 rounded-full font-semibold hover:bg-gray-300 transition"
+                    className="bg-white text-black text-sm sm:text-base px-5 py-2 rounded-full font-semibold hover:bg-gray-300 transition"
                   >
                     {slide.buttonText}
                   </a>
@@ -102,7 +100,7 @@ const Popup = () => {
         </div>
       </div>
 
-      {/* Tailwind Animation (add in globals.css if not in config) */}
+      {/* Animation */}
       <style jsx>{`
         @keyframes fade-in {
           from {
