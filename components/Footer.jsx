@@ -285,7 +285,7 @@ const Footer = () => {
 
         {/* Copyright Text */}
         <div className="text-sm text-gray-400">
-          © {new Date().getFullYear()} &copy; 2024 HURLA INTERIO. All rights reserved. Crafted with excellence.
+          © {new Date().getFullYear()} HURLA INTERIO. All rights reserved. Crafted with excellence.
         </div>
       </div>
     </div>

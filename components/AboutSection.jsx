@@ -28,7 +28,7 @@ const AboutSection = () => {
               Crafting Luxury Since 2008
             </h2>
             <p className="text-xl text-gray-600 mb-6 leading-relaxed">
-              At Luxury Studio, we believe that exceptional furniture is more than just 
+              At Hurla Interio, we believe that exceptional furniture is more than just 
               functional pieces – an expression of artistry, craftsmanship, and 
               personal style.
             </p>
