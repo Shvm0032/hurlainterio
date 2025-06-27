@@ -2,16 +2,16 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { 
-  Facebook, 
-  Instagram, 
-  Twitter, 
-  Linkedin, 
-  Mail, 
-  Phone, 
-  MapPin, 
+import {
+  Facebook,
+  Instagram,
+  Twitter,
+  Linkedin,
+  Mail,
+  Phone,
+  MapPin,
   Clock,
-  ArrowUp 
+  ArrowUp
 } from 'lucide-react';
 
 const Footer = () => {
@@ -56,16 +56,16 @@ const Footer = () => {
   return (
     <footer className="bg-[#111111] text-white">
       <motion.button
-  onClick={scrollToTop}
-  whileHover={{ scale: 1.1 }}
-  whileTap={{ scale: 0.9 }}
-  className="fixed bottom-4 right-4 bg-amber-600 p-2 rounded-full z-[10000] hover:bg-amber-600 transition-colors duration-200"
-  aria-label="Scroll to top"
->
-  <ArrowUp className="w-5 h-5 text-white" />
-</motion.button>
+        onClick={scrollToTop}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        className="fixed bottom-4 right-4 bg-amber-600 p-2 rounded-full z-[10000] hover:bg-amber-600 transition-colors duration-200"
+        aria-label="Scroll to top"
+      >
+        <ArrowUp className="w-5 h-5 text-white" />
+      </motion.button>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-4">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}
@@ -82,10 +82,10 @@ const Footer = () => {
               </div>
             </Link>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Creating exceptional luxury furniture and interior design solutions 
+              Creating exceptional luxury furniture and interior design solutions
               that transform spaces into works of art.
             </p>
-            
+
             {/* Contact Info */}
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
@@ -118,7 +118,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <Link 
+                  <Link
                     href={link.href}
                     className="text-gray-300 hover:text-amber-400 transition-colors duration-200"
                   >
@@ -140,7 +140,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
-                  <Link 
+                  <Link
                     href={link.href}
                     className="text-gray-300 hover:text-amber-400 transition-colors duration-200"
                   >
@@ -162,7 +162,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.name}>
-                  <Link 
+                  <Link
                     href={link.href}
                     className="text-gray-300 hover:text-amber-400 transition-colors duration-200"
                   >
@@ -205,9 +205,9 @@ const Footer = () => {
         </motion.div> */}
 
         {/* Social Links & Bottom Bar */}
-        <div className="border-t  border-gray-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <motion.div
+        {/* <div className="border-t  border-gray-800 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center"> */}
+            {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
@@ -224,9 +224,17 @@ const Footer = () => {
                   <social.icon className="w-6 h-6" />
                 </Link>
               ))}
-            </motion.div>
-
-            <motion.div
+            </motion.div> */}
+            {/* <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              viewport={{ once: true }}
+              className=" flex flex-col mt-4 md:flex-row pt-4 items-center space-y-4 md:space-y-0 md:space-x-8 text-center text-gray-400"
+            >
+              <p>&copy; 2024 HURLA INTERIO. All rights reserved. Crafted with excellence.</p>
+            </motion.div> */}
+            {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
@@ -246,20 +254,41 @@ const Footer = () => {
               </div>
               
               
-            </motion.div>
-          </div>
+            </motion.div> */}
+          {/* </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            viewport={{ once: true }}
-            className="mt-4 pt-4  border-t border-gray-800 text-center text-gray-400"
-          >
-            <p>&copy; 2024 HURLA INTERIO. All rights reserved. Crafted with excellence.</p>
-          </motion.div>
+
+        </div> */}
+
+      </div>
+      <div className="w-full border-t border-gray-200 mt-0 py-6 px-4">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-center">
+        {/* Social Icons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          viewport={{ once: true }}
+          className="flex space-x-6 mb-4 md:mb-0"
+        >
+          {socialLinks.map((social) => (
+            <Link
+              key={social.label}
+              href={social.href}
+              className="text-gray-400 hover:text-amber-400 transition-colors duration-200"
+              aria-label={social.label}
+            >
+              <social.icon className="w-6 h-6" />
+            </Link>
+          ))}
+        </motion.div>
+
+        {/* Copyright Text */}
+        <div className="text-sm text-gray-400">
+          © {new Date().getFullYear()} &copy; 2024 HURLA INTERIO. All rights reserved. Crafted with excellence.
         </div>
       </div>
+    </div>
     </footer>
   );
 };

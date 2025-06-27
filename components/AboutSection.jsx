@@ -29,7 +29,7 @@ const AboutSection = () => {
             </h2>
             <p className="text-xl text-gray-600 mb-6 leading-relaxed">
               At Luxury Studio, we believe that exceptional furniture is more than just 
-              functional pieces – it's an expression of artistry, craftsmanship, and 
+              functional pieces – an expression of artistry, craftsmanship, and 
               personal style.
             </p>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">

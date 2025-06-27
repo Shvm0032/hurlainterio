@@ -66,7 +66,7 @@ const Popup = () => {
       </div>
 
       <div className="fixed z-[1000] flex items-center justify-center top-0 left-0 h-[100vh] w-full bg-[#00000075] animate-fade-in">
-        <div className="md:w-[70%] h-[500px] w-[80%] relative rounded-md overflow-hidden transition-opacity duration-500 ease-in-out">
+        <div className="md:w-[70%] h-[62vh] sm:w-[90%] relative rounded-md overflow-hidden transition-opacity duration-500 ease-in-out">
 
           {/* ❌ Close Button */}
           <button
