@@ -137,7 +137,7 @@ const Navbar = () => {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`md:hidden p-2 rounded-md ${
-              isScrolled ? 'text-gray-900' : 'text-white'
+              isScrolled ? 'text-white' : 'text-white'
             }`}
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
