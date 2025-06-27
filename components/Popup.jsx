@@ -66,7 +66,7 @@ const Popup = () => {
       </div>
 
       <div className="fixed z-[1000] flex items-center justify-center top-0 left-0 h-[100vh] w-full bg-[#00000075] animate-fade-in">
-        <div className="w-[70%] h-[500px] relative rounded-md overflow-hidden transition-opacity duration-500 ease-in-out">
+        <div className="md:w-[70%] h-[500px] w-[90%]relative rounded-md overflow-hidden transition-opacity duration-500 ease-in-out">
 
           {/* ❌ Close Button */}
           <button
@@ -88,7 +88,7 @@ const Popup = () => {
                   priority={true}
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-white">
-                  <h2 className="text-3xl md:text-5xl font-bold mb-4">{slide.title}</h2>
+                  <h2 className="text-2xl md:text-5xl  font-bold mb-4">{slide.title}</h2>
                   <a
                     href={slide.link}
                     className="bg-white text-black px-5 py-2 rounded-full font-semibold hover:bg-gray-300 transition"

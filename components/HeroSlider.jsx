@@ -43,7 +43,7 @@ const HeroSlider = () => {
 
   if (!mounted) {
     return (
-      <div className="relative h-screen bg-gray-900 flex items-center justify-center">
+      <div className="relative h-screen bg-gray-900 pt-[50px] flex items-center justify-center">
         <div className="text-white text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-4">Luxury Studio</h1>
           <p className="text-xl md:text-2xl">Premium Interior Design</p>
