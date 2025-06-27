@@ -73,7 +73,7 @@ const HeroSlider = () => {
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat hero-overlay"
                 style={{ backgroundImage: `url(${slide.image})` }}
               />
-              <div className="relative z-10 h-full flex items-center justify-center pt-[200px] md:pt-50">
+              <div className="relative z-10 h-full flex items-center justify-center pt-[100px] md:pt-50">
                 <div className="text-center text-white max-w-4xl mx-auto px-4">
                   <motion.div
                     initial={{ opacity: 0, y: 50 }}
