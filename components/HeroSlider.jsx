@@ -43,7 +43,7 @@ const HeroSlider = () => {
 
   if (!mounted) {
     return (
-      <div className="relative h-screen bg-gray-900 pt-[50px] flex items-center justify-center">
+      <div className="relative h-screen bg-gray-900 flex items-center justify-center">
         <div className="text-white text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-4">Luxury Studio</h1>
           <p className="text-xl md:text-2xl">Premium Interior Design</p>
@@ -73,14 +73,14 @@ const HeroSlider = () => {
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat hero-overlay"
                 style={{ backgroundImage: `url(${slide.image})` }}
               />
-              <div className="relative z-10 h-full flex items-center justify-center">
+              <div className="relative z-10 h-full flex items-center justify-center pt-[200px] md:pt-50">
                 <div className="text-center text-white max-w-4xl mx-auto px-4">
                   <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                   >
-                    <h1 className="text-5xl md:text-7xl font-bold mb-4 leading-tight">
+                    <h1 className="text-3xl md:text-7xl font-bold mb-4 leading-tight">
                       {slide.title}
                     </h1>
                   </motion.div>

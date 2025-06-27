@@ -19,8 +19,8 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
@@ -37,7 +37,7 @@ const AboutSection = () => {
               bespoke pieces that reflect your unique vision while maintaining the 
               highest standards of quality and elegance.
             </p>
-            
+
             {/* Stats */}
             <div className="grid grid-cols-2 gap-6 mb-8">
               {stats.map((stat, index) => (
@@ -71,8 +71,8 @@ const AboutSection = () => {
 
           {/* Image */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             className="relative"
@@ -85,12 +85,12 @@ const AboutSection = () => {
                 className="object-cover"
               />
             </div>
-            
+
             {/* Floating card */}
             <motion.div
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
               className="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-xl glass-effect"
             >
