@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Award, Users, Clock, Heart } from 'lucide-react';
+import AboutImage from '../Public/Assets/Kitchen/about-img1.png'
 
 const AboutSection = () => {
   const stats = [
@@ -14,7 +15,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-neutral-600">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
@@ -24,19 +25,13 @@ const AboutSection = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Crafting Luxury Since 2008
+            <h2 className="text-4xl md:text-5xl font-bold text-amber-600  mb-6">
+              Elevating Kitchens & Wardrobes with Timeless Elegance
             </h2>
-            <p className="text-xl text-gray-600 mb-6 leading-relaxed">
-              At Hurla Interio, we believe that exceptional furniture is more than just 
-              functional pieces – an expression of artistry, craftsmanship, and 
-              personal style.
+            <p className="text-xl text-white mb-6 leading-relaxed">
+              At Hurla Interio, we transform everyday spaces into luxurious experiences. Our expert designers and skilled artisans collaborate to craft bespoke kitchen and wardrobe solutions that blend functionality with refined aesthetics — tailored entirely to your lifestyle and taste.
             </p>
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Our team of master craftsmen and designers work tirelessly to create 
-              bespoke pieces that reflect your unique vision while maintaining the 
-              highest standards of quality and elegance.
-            </p>
+
 
             {/* Stats */}
             <div className="grid grid-cols-2 gap-6 mb-8">
@@ -79,7 +74,7 @@ const AboutSection = () => {
           >
             <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                src={AboutImage}
                 alt="Luxury furniture craftsmanship"
                 fill
                 className="object-cover"

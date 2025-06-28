@@ -4,50 +4,56 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ExternalLink, Eye } from 'lucide-react';
+import PortfolioImage1 from '../Public/Assets/Kitchen/collection-img-2.jpg'
+import PortfolioImage2 from '../Public/Assets/Wardrobe/collection-img-3.png'
+import PortfolioImage3 from '../Public/Assets/Kitchen/Portfolio-img-3.png'
+import PortfolioImage4 from '../Public/Assets/Wardrobe/hero-slider-2.jpg'
+import PortfolioImage5 from '../Public/Assets/Kitchen/portfolio-img-4.jpg'
+import PortfolioImage6 from '../Public/Assets/Wardrobe/walking-worddrobe.jpg'
 
 const PortfolioGrid = () => {
   const projects = [
     {
       id: 1,
-      title: 'Luxury Penthouse',
-      category: 'Residential',
-      image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      description: 'Modern luxury penthouse with panoramic city views',
+      title: 'Modular Kitchen Masterpieces',
+      category: 'Kitchen',
+      image: PortfolioImage1.src,
+      description: 'Smart layouts, seamless finishes, and modern innovation — our kitchens are built for style and efficiency.',
     },
     {
       id: 2,
-      title: 'Executive Office',
-      category: 'Commercial',
-      image: 'https://images.pexels.com/photos/1571453/pexels-photo-1571453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      description: 'Sophisticated executive office design',
+      title: 'Premium Wardrobe Solutions',
+      category: 'Wardrobe',
+      image: PortfolioImage2.src,
+      description: 'Sleek, spacious, and personalized — our wardrobes combine elegance with everyday practicality.',
     },
     {
       id: 3,
-      title: 'Contemporary Villa',
-      category: 'Residential',
-      image: 'https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      description: 'Minimalist villa with natural elements',
+      title: 'Luxury Island Kitchens',
+      category: 'Kitchen',
+      image: PortfolioImage3.src,
+      description: 'Create a stunning centrepiece with island kitchens that bring luxury and convenience together beautifully.',
     },
     {
       id: 4,
-      title: 'Boutique Hotel',
-      category: 'Hospitality',
-      image: 'https://images.pexels.com/photos/1571470/pexels-photo-1571470.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      description: 'Elegant boutique hotel lobby design',
+      title: 'Sliding Wardrobe Designs',
+      category: 'Wardrobe',
+      image: PortfolioImage4.src,
+      description: 'Smooth, space-saving, and stunning — discover sliding wardrobes crafted for urban elegance.',
     },
     {
       id: 5,
-      title: 'Urban Loft',
-      category: 'Residential',
-      image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      description: 'Industrial chic loft conversion',
+      title: 'Customized Kitchen Interiors',
+      category: 'Kitchen',
+      image: PortfolioImage5.src,
+      description: 'From minimal to majestic — every detail of your kitchen, designed exactly the way you envision it.',
     },
     {
       id: 6,
-      title: 'Fine Dining',
-      category: 'Restaurant',
-      image: 'https://images.pexels.com/photos/1571453/pexels-photo-1571453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      description: 'Upscale restaurant interior design',
+      title: 'Walk-in Wardrobe Spaces',
+      category: 'Wardrobe',
+      image: PortfolioImage6.src,
+      description: 'Step into a private sanctuary of organization and luxury with our bespoke walk-in wardrobes.',
     },
   ];
 
@@ -65,8 +71,7 @@ const PortfolioGrid = () => {
             Our Portfolio
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Discover our exceptional projects that showcase our commitment to luxury, 
-            innovation, and impeccable craftsmanship.
+            Modern kitchens. Stylish wardrobes. See how we redefine interiors with purpose and elegance.
           </p>
         </motion.div>
 
@@ -80,39 +85,39 @@ const PortfolioGrid = () => {
               viewport={{ once: true }}
               className="portfolio-card group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="relative h-64 overflow-hidden">
+              {/* Image with Zoom + Buttons on Hover */}
+              <div className="relative h-64 overflow-hidden group">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="portfolio-overlay absolute inset-0 flex items-center justify-center">
-                  <div className="text-center text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                    <p className="text-lg mb-4 opacity-90">{project.description}</p>
-                    <div className="flex items-center justify-center space-x-4">
-                      <Link href={`/portfolio/${project.id}`}>
-                        <motion.button
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.9 }}
-                          className="bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/30 transition-colors duration-300"
-                        >
-                          <Eye className="w-5 h-5" />
-                        </motion.button>
-                      </Link>
+
+                {/* Buttons only on hover */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="flex items-center space-x-4">
+                    <Link href={`/portfolio/${project.id}`}>
                       <motion.button
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
-                        className="bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/30 transition-colors duration-300"
+                        className="bg-white/30 backdrop-blur-sm p-3 rounded-full hover:bg-white/40 transition-colors duration-300"
                       >
-                        <ExternalLink className="w-5 h-5" />
+                        <Eye className="w-5 h-5 text-white" />
                       </motion.button>
-                    </div>
+                    </Link>
+                    <motion.button
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      className="bg-white/30 backdrop-blur-sm p-3 rounded-full hover:bg-white/40 transition-colors duration-300"
+                    >
+                      <ExternalLink className="w-5 h-5 text-white" />
+                    </motion.button>
                   </div>
                 </div>
               </div>
-              
+
+              {/* Title + Category + Description */}
               <div className="p-6">
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="text-xl font-bold text-gray-900">{project.title}</h3>
@@ -126,6 +131,7 @@ const PortfolioGrid = () => {
           ))}
         </div>
 
+        {/* View More Button */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -137,7 +143,7 @@ const PortfolioGrid = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gray-900 text-white px-8 py-4 rounded-md text-lg font-semibold hover:bg-gray-800 transition-colors duration-300"
+              className="bg-amber-600 text-white px-8 py-4 rounded-md text-lg font-semibold hover:bg-amber-700 transition-colors duration-300"
             >
               View Full Portfolio
             </motion.button>

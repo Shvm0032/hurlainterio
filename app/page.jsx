@@ -6,6 +6,7 @@ import AboutSection from '../components/AboutSection';
 import Testimonials from '../components/Testimonials';
 import USPs from '../components/USPs';
 import PartnerBanner from '../components/PartnerBanner';
+import OurPartner from '../components/OurPartner';
 
 export const metadata = {
   title: 'hurlainterio - Premium Custom Interior Design',
@@ -20,8 +21,10 @@ export default function Home() {
       <StyleCarousel />
       <PortfolioGrid />
       <AboutSection />
-      <Testimonials />
       <USPs />
+      <Testimonials />
+      
+      <OurPartner/>
       <PartnerBanner />
     </div>
   );

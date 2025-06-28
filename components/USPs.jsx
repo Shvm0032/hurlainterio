@@ -60,11 +60,10 @@ const USPs = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Why Choose Hurla Interio Studio
+            Why Choose Hurla Interio
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We are committed to delivering exceptional value through our comprehensive 
-            service offerings and unwavering dedication to quality.
+            Where design meets detail. We deliver seamless, space-smart kitchen and wardrobe solutions with an uncompromised focus on quality and aesthetics.
           </p>
         </motion.div>
 

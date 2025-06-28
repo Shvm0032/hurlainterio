@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import Image from 'next/image';
 
 const Testimonials = () => {
   const [mounted, setMounted] = useState(false);
@@ -18,37 +19,33 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: 'Sarah Johnson',
-      role: 'Interior Designer',
-      company: 'Elite Homes',
-      content: 'Working with Luxury Studio has been an absolute pleasure. Their attention to detail and commitment to quality is unmatched in the industry.',
+      name: 'Anita Sharma',
+      role: 'Dehradun',
+      content: 'Hurla Interio turned my small kitchen into a modern, space-efficient beauty. Every inch feels premium!',
       rating: 5,
       image: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=150&w=150',
     },
     {
       id: 2,
-      name: 'Michael Chen',
-      role: 'CEO',
-      company: 'Chen Enterprises',
-      content: 'The bespoke furniture pieces transformed our office space completely. The craftsmanship is exceptional and the design perfectly captures our brand essence.',
+      name: 'Rajat Verma',
+      role: 'Dehradun',
+      content: 'Loved their sliding wardrobe design! Elegant, spacious, and fits perfectly in my compact bedroom.',
       rating: 5,
       image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=150&w=150',
     },
     {
       id: 3,
-      name: 'Emily Rodriguez',
-      role: 'Homeowner',
-      company: 'Private Client',
-      content: 'From concept to completion, the team exceeded our expectations. Our home now feels like a luxury resort. Every piece tells a story of elegance and sophistication.',
+      name: 'Pooja Malhotra',
+      role: 'Dehradun',
+      content:'The team truly understood my vision and brought it to life. My kitchen now feels elegant, highly functional, and uniquely mine.',
       rating: 5,
       image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=150&w=150',
     },
     {
       id: 4,
-      name: 'David Thompson',
-      role: 'Architect',
-      company: 'Thompson Associates',
-      content: 'Their ability to bring our architectural vision to life through custom furniture is remarkable. Professional, reliable, and incredibly talented team.',
+      name: 'Aman Kapoor',
+      role: 'Dehradun',
+      content:'The walk-in wardrobe they built feels like a boutique — sleek design and smart storage. Totally impressed!',
       rating: 5,
       image: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=150&w=150',
     },
@@ -110,21 +107,22 @@ const Testimonials = () => {
                   </div>
                   
                   <p className="text-gray-200 mb-6 leading-relaxed text-lg">
-                    "{testimonial.content}"
+                    {`"${testimonial.content}"`}
                   </p>
                   
                   <div className="flex items-center">
                     <div className="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
-                      <img
-                        src={testimonial.image}
+                      <Image  src={testimonial.image}
                         alt={testimonial.name}
+                        height={100}
+                        width={100}
                         className="w-full h-full object-cover"
                       />
                     </div>
                     <div>
                       <div className="text-white font-semibold">{testimonial.name}</div>
                       <div className="text-amber-400 text-sm">
-                        {testimonial.role} • {testimonial.company}
+                        {testimonial.role} 
                       </div>
                     </div>
                   </div>

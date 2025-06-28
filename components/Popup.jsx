@@ -41,15 +41,15 @@ const Popup = () => {
   const slides = [
     {
       image: image1.src,
-      title: "Welcome to Our Interior Design",
-      buttonText: "Explore More",
-      link: "/services",
+      title: "HAFELE DESIGN STUDIO ",
+      buttonText: "Coming Soon",
+      link: "/#",
     },
     {
       image: image2.src,
-      title: "Modern Living Spaces",
-      buttonText: "View Projects",
-      link: "/projects",
+      title: "HURLA INTERIOR",
+      buttonText: "Explore More",
+      link: "/#",
     },
   ];
 

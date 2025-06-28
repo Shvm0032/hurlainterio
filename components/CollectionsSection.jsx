@@ -3,35 +3,40 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import CollectionCard from './CollectionCard';
+import CollectionImage1 from '../Public/Assets/Kitchen/collection-img-1.png'
+import CollectionImage2 from '../Public/Assets/Kitchen/collection-img-2.jpg'
+import CollectionImage3 from '../Public/Assets/Wardrobe/collection-img-3.png'
+import CollectionImage4 from '../Public/Assets/Wardrobe/collection-img-4.png'
+
 
 const CollectionsSection = () => {
   const collections = [
     {
-      id: 'diamante',
-      name: 'Diamante Collection',
-      description: 'Luxurious furniture pieces that sparkle with sophistication and timeless elegance.',
-      image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      id: 'modular-kitchen',
+      name: 'Elegante Modular Kitchen',
+      description: 'A perfect blend of modern aesthetics and smart storage, the Elegante Modular Kitchen features sleek cabinets, hidden appliances, and a clutter-free layout for effortless cooking.',
+      image: CollectionImage1.src,
       features: ['Premium Materials', 'Handcrafted Details', 'Custom Finishes'],
     },
     {
-      id: 'rubino',
-      name: 'Rubino Collection',
-      description: 'Rich, warm tones and opulent designs that create spaces of unparalleled luxury.',
-      image: 'https://images.pexels.com/photos/1571453/pexels-photo-1571453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      id: 'rustica-luxe',
+      name: 'Rustica Luxe Kitchen',
+      description: 'Inspired by warm tones and natural finishes, Rustica Luxe combines wooden textures with high-end appliances, creating a cozy yet sophisticated culinary space.',
+      image: CollectionImage2.src,
       features: ['Rich Textures', 'Bold Designs', 'Statement Pieces'],
     },
     {
-      id: 'smeraldo',
-      name: 'Smeraldo Collection',
-      description: 'Fresh, contemporary designs with natural elements and sustainable materials.',
-      image: 'https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      id: 'slide-wardrobe',
+      name: 'Urban Slide Wardrobe',
+      description: 'Designed for compact city living, this sliding-door wardrobe offers maximum storage with a sleek, contemporary design — perfect for bedrooms where space is a luxury.',
+      image: CollectionImage3.src,
       features: ['Eco-Friendly', 'Modern Aesthetics', 'Natural Elements'],
     },
     {
-      id: 'topazio',
-      name: 'Topazio Collection',
-      description: 'Golden accents and refined details for the most discerning taste.',
-      image: 'https://images.pexels.com/photos/1571470/pexels-photo-1571470.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      id: 'closet',
+      name: 'Classique Walk-In Closet',
+      description: 'Experience the ultimate in wardrobe luxury with Classique — a walk-in wardrobe concept offering open shelves, drawer organizers, and ambient lighting for a premium dressing experience.',
+      image: CollectionImage4.src,
       features: ['Gold Accents', 'Refined Details', 'Exclusive Designs'],
     },
   ];
@@ -80,9 +85,9 @@ const CollectionsSection = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gray-900 text-white px-8 py-4 rounded-md text-lg font-semibold hover:bg-gray-800 transition-colors duration-300"
+              className="bg-amber-600 text-white px-8 py-4 rounded-md text-lg font-semibold hover:bg-amber-700 transition-colors duration-300"
             >
-              View All Collections
+              DOWNLOAD THE CATALOGUE
             </motion.button>
           </Link>
         </motion.div>

@@ -8,6 +8,11 @@ import Image from 'next/image';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
+import StyleImage1 from '../Public/Assets/Wardrobe/style-img-1.png'
+import StyleImage2 from '../Public/Assets/Wardrobe/style-img-2.png'
+import StyleImage3 from '../Public/Assets/Kitchen/style-img-3.png'
+import StyleImage4 from '../Public/Assets/Kitchen/style-img-4.png'
+import StyleImage5 from '../Public/Assets/Kitchen/style-img-5.png'
 
 const StyleCarousel = () => {
   const [mounted, setMounted] = useState(false);
@@ -18,52 +23,52 @@ const StyleCarousel = () => {
 
   const styles = [
     {
-      id: 'modern-contemporary',
-      name: 'Modern Contemporary',
-      description: 'Clean lines, minimalist aesthetics, and functional beauty.',
-      image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg',
-      features: ['Clean Lines', 'Neutral Colors', 'Functional Design'],
+      id: 'luxe-kitchen',
+      name: 'Minimal Luxe Kitchen',
+      description: 'Streamlined elegance with clean lines and integrated modern appliances.',
+      image: StyleImage3.src,
+      features: ['Soft-Close Drawers', 'Handleless Cabinets', 'Neutral Palette', 'marble countertop'],
     },
     {
-      id: 'classic-elegance',
-      name: 'Classic Elegance',
-      description: 'Timeless sophistication with traditional craftsmanship.',
-      image: 'https://images.pexels.com/photos/1571453/pexels-photo-1571453.jpeg',
-      features: ['Traditional Craft', 'Rich Materials', 'Timeless Appeal'],
+      id: 'contemporary-kitchen',
+      name: 'Contemporary Matte Kitchen',
+      description: 'Bold colors meet matte textures in modern design perfection.',
+      image: StyleImage4.src,
+      features: ['Fingerprint-free Finish', 'Open Shelving', 'Smart Appliance Zones'],
     },
     {
-      id: 'minimalist-design',
-      name: 'Minimalist Design',
-      description: 'Less is more - pure forms and essential functionality.',
-      image: 'https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg',
-      features: ['Simple Forms', 'Open Spaces', 'Essential Elements'],
+      id: 'wooden-kitchen',
+      name: ' Classic Wooden Kitchen',
+      description: 'Warm wooden textures with vintage charm and natural finishes.',
+      image: StyleImage5.src,
+      features: ['Solid Wood Shutters', 'Brass Handles', 'Rustic Tiles'],
     },
     {
-      id: 'luxury-traditional',
-      name: 'Luxury Traditional',
-      description: 'Opulent designs with heritage-inspired craftsmanship.',
-      image: 'https://images.pexels.com/photos/1571470/pexels-photo-1571470.jpeg',
-      features: ['Heritage Inspired', 'Opulent Details', 'Premium Materials'],
+      id: 'mirror-wardrobe',
+      name: 'Mirror Glide Wardrobe',
+      description: 'Sliding mirrored wardrobe for modern, space-enhancing storage solution.',
+      image: StyleImage1.src,
+      features: ['Sliding Doors', 'Full-Length Mirrors', 'Drawer Organizers'],
     },
     {
-      id: 'industrial-chic',
-      name: 'Industrial Chic',
-      description: 'Raw materials meet refined design in urban sophistication.',
-      image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg',
-      features: ['Raw Materials', 'Urban Style', 'Industrial Elements'],
+      id: 'walk-in-closet',
+      name: 'Walk-in Modern Closet',
+      description: 'Spacious, stylish walk-in with open zones and lighting.',
+      image: StyleImage2.src,
+      features: ['LED Lighting', 'Island Storage', 'Open Hanging Racks'],
     },
   ];
 
   if (!mounted) return <div className="h-96 bg-gray-100" />;
 
   return (
-    <section className="py-20 bg-white relative">
+    <section className="py-20 bg-neutral-600 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Design Styles
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
             Explore our diverse range of design styles, each carefully crafted to reflect different aesthetics and lifestyles.
           </p>
         </div>
