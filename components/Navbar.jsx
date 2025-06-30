@@ -22,6 +22,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [activeSubDropdown, setActiveSubDropdown] = useState(null);
+  const [mobileDropdowns, setMobileDropdowns] = useState({});
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,6 +69,20 @@ const Navbar = () => {
     { name: "Portfolio", href: "/#", icon: Briefcase },
     { name: "Contact", href: "/#", icon: Phone },
   ];
+
+  const toggleMobileDropdown = (itemName) => {
+    setMobileDropdowns(prev => ({
+      ...prev,
+      [itemName]: !prev[itemName]
+    }));
+  };
+
+  const toggleMobileSubDropdown = (parentName, itemName) => {
+    setMobileDropdowns(prev => ({
+      ...prev,
+      [`${parentName}-${itemName}`]: !prev[`${parentName}-${itemName}`]
+    }));
+  };
 
   return (
     <>
@@ -169,6 +184,106 @@ const Navbar = () => {
             </button>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden bg-[#18191b] shadow-lg">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              {navItems.map((item) => (
+                <div key={item.name} className="relative">
+                  {item.dropdown ? (
+                    <>
+                      <button
+                        onClick={() => toggleMobileDropdown(item.name)}
+                        className={`flex items-center justify-between w-full px-3 py-2 rounded-md text-base font-medium ${
+                          isScrolled ? "text-white" : "text-white"
+                        }`}
+                      >
+                        <div className="flex items-center">
+                          <item.icon className="w-5 h-5 mr-2" />
+                          <span>{item.name}</span>
+                        </div>
+                        <ChevronDown
+                          className={`w-5 h-5 transition-transform ${
+                            mobileDropdowns[item.name] ? "transform rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+                      {mobileDropdowns[item.name] && (
+                        <div className="pl-6 space-y-1">
+                          {item.dropdown.map((product) => (
+                            <div key={product.name} className="relative">
+                              {product.children.length > 0 ? (
+                                <>
+                                  <button
+                                    onClick={() => toggleMobileSubDropdown(item.name, product.name)}
+                                    className="flex items-center justify-between w-full px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-amber-400"
+                                  >
+                                    <span>{product.name}</span>
+                                    <ChevronDown
+                                      className={`w-5 h-5 transition-transform ${
+                                        mobileDropdowns[`${item.name}-${product.name}`] ? "transform rotate-180" : ""
+                                      }`}
+                                    />
+                                  </button>
+                                  {mobileDropdowns[`${item.name}-${product.name}`] && (
+                                    <div className="pl-4 space-y-1">
+                                      {product.children.map((child) => (
+                                        <Link
+                                          key={child.name}
+                                          href={child.href}
+                                          className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-amber-400"
+                                          onClick={() => setIsMobileMenuOpen(false)}
+                                        >
+                                          {child.name}
+                                        </Link>
+                                      ))}
+                                    </div>
+                                  )}
+                                </>
+                              ) : (
+                                <Link
+                                  href={product.href}
+                                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-amber-400"
+                                  onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                  {product.name}
+                                </Link>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className={`flex items-center px-3 py-2 rounded-md text-base font-medium ${
+                        isScrolled ? "text-white" : "text-white"
+                      }`}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <item.icon className="w-5 h-5 mr-2" />
+                      {item.name}
+                    </Link>
+                  )}
+                </div>
+              ))}
+              <div className="pt-2">
+                <Link href="/contact">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full bg-amber-600 text-white px-6 py-2 rounded-md font-medium hover:bg-amber-700 transition-colors duration-200"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Talk to Us
+                  </motion.button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        )}
       </nav>
 
       <Popup />
