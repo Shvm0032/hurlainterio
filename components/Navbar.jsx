@@ -67,7 +67,7 @@ const Navbar = () => {
       dropdown: Products,
     },
     { name: "Portfolio", href: "/#", icon: Briefcase },
-    { name: "Contact", href: "/#", icon: Phone },
+    { name: "Contact", href: "/contact", icon: Phone },
   ];
 
   const toggleMobileDropdown = (itemName) => {
