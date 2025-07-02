@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: '',
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
   });
 
   const handleChange = (e) => {
@@ -23,38 +23,49 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission here
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We\'ll get back to you soon.');
+    console.log("Form submitted:", formData);
+    alert("Thank you for your message! We'll get back to you soon.");
     setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: '',
+      name: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: "",
     });
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Contact Us
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Ready to transform your space with luxury furniture? Get in touch with our 
-              design experts to discuss your project and explore our premium collections.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+    <div className="min-h-screen ">
+   
+     <section className="pb-16">
+      <div
+        className="relative py-8 mx-auto px-4 sm:px-6 lg:px-8 z-10" // z-10 for the background container
+        style={{
+          backgroundImage: `url("https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")`,
+          backgroundPosition: `center`,
+          backgroundSize: `cover`,
+        }}
+      >
+     
+        <div className="absolute bg-gradient-to-b from-transparent to-black/50 inset-0 z-10"></div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center pt-24 relative z-20" 
+        >
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            Contact Us
+          </h1>
+          <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
+            Ready to transform your space with luxury furniture? Get in touch
+            with our design experts to discuss your project and explore our
+            premium collections.
+          </p>
+        </motion.div>
+      </div>
+    </section>
 
       {/* Contact Form & Info */}
       <section className="py-20">
@@ -66,11 +77,16 @@ export default function Contact() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl font-bold text-gray-900 mb-8">Get In Touch</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-8">
+                Get In Touch
+              </h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Full Name *
                     </label>
                     <input
@@ -85,7 +101,10 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Email Address *
                     </label>
                     <input
@@ -103,7 +122,10 @@ export default function Contact() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor="phone"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Phone Number
                     </label>
                     <input
@@ -117,7 +139,10 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor="subject"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Subject *
                     </label>
                     <select
@@ -139,7 +164,10 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Message *
                   </label>
                   <textarea
@@ -173,19 +201,25 @@ export default function Contact() {
               transition={{ duration: 0.8 }}
               className="space-y-8"
             >
-              <h2 className="text-4xl font-bold text-gray-900 mb-8">Visit Our Showroom</h2>
-              
+              <h2 className="text-4xl font-bold text-gray-900 mb-8">
+                Visit Our Showroom
+              </h2>
+
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="bg-amber-100 p-3 rounded-full">
                     <MapPin className="w-6 h-6 text-amber-600" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Address</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      Address
+                    </h3>
                     <p className="text-gray-600">
-                      123 Luxury Avenue<br />
-                      Design District<br />
-                      New York, NY 10001
+                      123 Dehradun
+                      <br />
+                      Design District
+                      <br />
+                      Uttarakhand
                     </p>
                   </div>
                 </div>
@@ -195,8 +229,10 @@ export default function Contact() {
                     <Phone className="w-6 h-6 text-amber-600" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone</h3>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      Phone
+                    </h3>
+                    <p className="text-gray-600">+91 xxxxxxxxxx</p>
                   </div>
                 </div>
 
@@ -205,8 +241,10 @@ export default function Contact() {
                     <Mail className="w-6 h-6 text-amber-600" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Email</h3>
-                    <p className="text-gray-600">info@luxurystudio.com</p>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      Email
+                    </h3>
+                    <p className="text-gray-600">info@gmail.com</p>
                   </div>
                 </div>
 
@@ -215,7 +253,9 @@ export default function Contact() {
                     <Clock className="w-6 h-6 text-amber-600" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Hours</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      Hours
+                    </h3>
                     <div className="text-gray-600 space-y-1">
                       <p>Monday - Friday: 9:00 AM - 7:00 PM</p>
                       <p>Saturday: 10:00 AM - 6:00 PM</p>
@@ -227,7 +267,9 @@ export default function Contact() {
 
               {/* Map Placeholder */}
               <div className="mt-8">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Find Us</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                  Find Us
+                </h3>
                 <div className="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center">
                   <p className="text-gray-500">Interactive Map</p>
                 </div>
@@ -258,20 +300,24 @@ export default function Contact() {
           <div className="space-y-6">
             {[
               {
-                question: 'How long does a custom furniture project take?',
-                answer: 'Most custom projects are completed within 45-60 days from design approval. Complex pieces may require additional time.',
+                question: "How long does a custom furniture project take?",
+                answer:
+                  "Most custom projects are completed within 45-60 days from design approval. Complex pieces may require additional time.",
               },
               {
-                question: 'Do you offer design consultations?',
-                answer: 'Yes, we offer complimentary initial consultations to discuss your project requirements and explore design options.',
+                question: "Do you offer design consultations?",
+                answer:
+                  "Yes, we offer complimentary initial consultations to discuss your project requirements and explore design options.",
               },
               {
-                question: 'What is your warranty policy?',
-                answer: 'We provide a comprehensive 15-year warranty on all furniture pieces, covering craftsmanship and material defects.',
+                question: "What is your warranty policy?",
+                answer:
+                  "We provide a comprehensive 15-year warranty on all furniture pieces, covering craftsmanship and material defects.",
               },
               {
-                question: 'Do you deliver nationwide?',
-                answer: 'Yes, we offer delivery services nationwide with white-glove service included for all premium collections.',
+                question: "Do you deliver nationwide?",
+                answer:
+                  "Yes, we offer delivery services nationwide with white-glove service included for all premium collections.",
               },
             ].map((faq, index) => (
               <motion.div
@@ -282,7 +328,9 @@ export default function Contact() {
                 viewport={{ once: true }}
                 className="bg-white rounded-lg p-6 shadow-md"
               >
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                  {faq.question}
+                </h3>
                 <p className="text-gray-600">{faq.answer}</p>
               </motion.div>
             ))}
